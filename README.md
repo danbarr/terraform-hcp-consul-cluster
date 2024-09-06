@@ -24,10 +24,6 @@ Prerequisites:
 |------|---------|
 | <a name="provider_hcp"></a> [hcp](#provider\_hcp) | >= 0.57 |
 
-## Modules
-
-No modules.
-
 ## Resources
 
 | Name | Type |
@@ -40,13 +36,13 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
+| <a name="input_prefix"></a> [prefix](#input\_prefix) | This prefix will be used to generate unique resource names. | `string` | n/a | yes |
 | <a name="input_cidr_block"></a> [cidr\_block](#input\_cidr\_block) | CIDR block for the HVN. | `string` | `"172.25.16.0/20"` | no |
 | <a name="input_cloud_provider"></a> [cloud\_provider](#input\_cloud\_provider) | Cloud provider where the HVN and Consul cluster will be located. Only used if `create_hvn = true`. | `string` | `"aws"` | no |
 | <a name="input_consul_cluster_id"></a> [consul\_cluster\_id](#input\_consul\_cluster\_id) | ID for the Consul cluster. If left blank, an ID will be generated for you. | `string` | `""` | no |
 | <a name="input_create_hvn"></a> [create\_hvn](#input\_create\_hvn) | Whether to create a new HVN or use an existing one. | `bool` | `true` | no |
 | <a name="input_hvn_id"></a> [hvn\_id](#input\_hvn\_id) | ID of the HVN. If `create_hvn = false`, this must be set to an existing HVN ID. If left blank and `create_hvn = true`, an ID will be generated for you. | `string` | `""` | no |
 | <a name="input_min_consul_version"></a> [min\_consul\_version](#input\_min\_consul\_version) | The minimum Consul patch version of the cluster. If not specified, it is defaulted to the version that is currently recommended by HCP. | `string` | `null` | no |
-| <a name="input_prefix"></a> [prefix](#input\_prefix) | This prefix will be used to generate unique resource names. | `string` | n/a | yes |
 | <a name="input_public_endpoint"></a> [public\_endpoint](#input\_public\_endpoint) | Whether the Consul cluster should have a public endpoint. If false, you will need to set up HVN peering to reach the cluster. | `bool` | `false` | no |
 | <a name="input_region"></a> [region](#input\_region) | Region where the HVN and Consul cluster will be located. Only used if `create_hvn = true`. | `string` | `"us-east-1"` | no |
 | <a name="input_tier"></a> [tier](#input\_tier) | Sizing tier of the Consul cluster. | `string` | `"development"` | no |
