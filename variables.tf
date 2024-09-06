@@ -16,7 +16,7 @@ variable "hvn_id" {
 
   validation {
     condition = var.hvn_id == "" ? true : (
-      can(regex("[a-zA-Z0-9-]", var.hvn_id)) &&
+      can(regex("^[a-zA-Z0-9-]+$", var.hvn_id)) &&
       length(var.hvn_id) >= 3 &&
       length(var.hvn_id) <= 36
     )
